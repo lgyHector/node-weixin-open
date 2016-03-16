@@ -3,8 +3,8 @@ var nwopen = require('../index');
 var settings = require('node-weixin-settings');
 
 var app = {
-    app_id: 'wxaef635b02a299cb4',
-    app_secret: '25c13b15df967ff4f19885d602354894'
+    app_id: process.env.COMPONENT_APP_ID,
+    app_secret: process.env.COMPONENT_APP_SECRET
 }
 var ticket = 'ticket@@@P4Do1LhmY0ABS8H5ggVPxvx7uQJdsKjobAW0JOXM8rWUbH6lgDT2rdfXMW3MdLH3Ront3wQyFAUxvIISzK9rMA';
 var pre_auth_code = '';
