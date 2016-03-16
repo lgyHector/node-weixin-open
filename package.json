@@ -1,4 +1,30 @@
 {
-  "name": "application-name",
-  "version": "0.0.1"
+  "name": "node-weixin-open",
+  "version": "0.0.1",
+  "author": {
+    "email": "lgyt34@hotmail.com"
+  },
+  "description": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lgyhitler/node-weixin-open.git"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "dependencies": {
+    "es6-promise": "^3.1.2",
+    "json2xml": "^0.1.2",
+    "node-form-validator": "^0.3.0",
+    "node-weixin-request": "^0.3.1",
+    "node-weixin-settings": "^0.1.0",
+    "node-weixin-util": "^0.2.0",
+    "xml2json": "^0.9.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.0",
+    "gulp-istanbul": "^0.9.0",
+    "gulp-mocha": "^2.0.0"
+  }
 }
