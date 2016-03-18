@@ -142,6 +142,7 @@ module.exports = {
     },
     authorize: function(app, app_id, code, cb){
         var oauthUrl = 'https://api.weixin.qq.com/sns/oauth2/access_token';
+        var request = require('request');
         settings.get(app.app_id, 'auth', function(authData){
             var params = {
                 appid: app_id,
@@ -150,11 +151,18 @@ module.exports = {
                 component_appid: app.app_id,
                 component_access_token: authData.componentAccessToken
             }
-            request.request(oauthUrl + '?' + util.toParam(params), null, cb);
+            request(oauthUrl + '?' + util.toParam(params), function (error, response, body) {
+                if (!error && response.statusCode === 200) {
+                    cb(false, JSON.parse(body));
+                } else {
+                    cb(true, {message: body});
+                }
+            })
         })
     },
     refresh: function(app, app_id, refresh_token, cb){
         var oauthUrl = 'https://api.weixin.qq.com/sns/oauth2/refresh_token';
+        var request = require('request');
         settings.get(app.app_id, 'auth', function(authData){
             var params = {
                 appid: app_id,
@@ -163,7 +171,13 @@ module.exports = {
                 component_access_token: authData.componentAccessToken,
                 refresh_token: refresh_token,
             }
-            request.request(oauthUrl + '?' + util.toParam(params), null, cb);
+            request(oauthUrl + '?' + util.toParam(params), function (error, response, body) {
+                if (!error && response.statusCode === 200) {
+                    cb(false, JSON.parse(body));
+                } else {
+                    cb(true, {message: body});
+                }
+            })
         })
     }
 }
