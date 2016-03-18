@@ -141,7 +141,7 @@ module.exports = {
         return oauthUrl + '?' + util.toParam(params) + '#wechat_redirect';
     },
     authorize: function(app, app_id, code, cb){
-        var oauthUrl = 'https://api.weixin.qq.com/sns/oauth2/access_token';
+        var oauthUrl = 'https://api.weixin.qq.com/sns/oauth2/component/access_token';
         var request = require('request');
         settings.get(app.app_id, 'auth', function(authData){
             var params = {
@@ -161,7 +161,7 @@ module.exports = {
         })
     },
     refresh: function(app, app_id, refresh_token, cb){
-        var oauthUrl = 'https://api.weixin.qq.com/sns/oauth2/refresh_token';
+        var oauthUrl = 'https://api.weixin.qq.com/sns/oauth2/component/refresh_token';
         var request = require('request');
         settings.get(app.app_id, 'auth', function(authData){
             var params = {
