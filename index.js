@@ -31,7 +31,7 @@ module.exports = {
                 if(err) return reject(err);
                 resolve(r);
             })
-        });
+        }.bind(this));
 
     },
     preAuthCode: function(app, cb){
@@ -46,7 +46,7 @@ module.exports = {
                 if(err) return reject(err);
                 resolve(r);
             });
-        })
+        }.bind(this))
 
     },
     queryAuth: function(app, auth_code, cb){
@@ -61,7 +61,7 @@ module.exports = {
             this._send(url, app, params, function(err, r){
                 if(err) return reject(err);
                 resolve(r);
-            });
+            }.bind(this));
         })
     },
     authorizerToken: function(app, auth_appid, refresh_token, cb){
@@ -77,7 +77,7 @@ module.exports = {
             this._send(url, app, params, function(err, r){
                 if(err) return reject(err);
                 resolve(r);
-            });
+            }.bind(this));
         })
     },
     authorizerInfo: function(app, cb){
@@ -92,7 +92,7 @@ module.exports = {
             this._send(url, app, params, function(err, r){
                 if(err) return reject(err);
                 resolve(r);
-            });
+            }.bind(this));
         })
     },
     authorizerOption: function(app, opt_name, cb){
@@ -108,7 +108,7 @@ module.exports = {
             this._send(url, app, params, function(err, r){
                 if(err) return reject(err);
                 resolve(r);
-            });
+            }.bind(this));
         })
     },
     setAuthorizerOption: function(app, opt_name, opt_value, cb){
@@ -125,7 +125,7 @@ module.exports = {
             this._send(url, app, params, function(err, r){
                 if(err) return reject(err);
                 resolve(r);
-            });
+            }.bind(this));
         })
     },
     createURL: function(app, app_id, redirect_url, state, scope){
