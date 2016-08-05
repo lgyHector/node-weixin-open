@@ -31,7 +31,7 @@ module.exports = {
                 if(err) return reject(err);
                 resolve(r);
             })
-        }.bind(this));
+        });
 
     },
     preAuthCode: function(app, cb){
