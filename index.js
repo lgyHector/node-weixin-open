@@ -62,7 +62,7 @@ module.exports = {
                 if(err) return reject(err);
                 resolve(r);
             }.bind(this));
-        })
+        }.bind(this))
     },
     authorizerToken: function(app, auth_appid, refresh_token, cb){
         var url = baseUrl + 'api_authorizer_token?'
@@ -78,7 +78,7 @@ module.exports = {
                 if(err) return reject(err);
                 resolve(r);
             }.bind(this));
-        })
+        }.bind(this))
     },
     authorizerInfo: function(app, cb){
         var url = baseUrl + 'api_get_authorizer_info?'
@@ -93,7 +93,7 @@ module.exports = {
                 if(err) return reject(err);
                 resolve(r);
             }.bind(this));
-        })
+        }.bind(this))
     },
     authorizerOption: function(app, opt_name, cb){
         var url = baseUrl + 'api_get_authorizer_option?'
@@ -109,7 +109,7 @@ module.exports = {
                 if(err) return reject(err);
                 resolve(r);
             }.bind(this));
-        })
+        }.bind(this))
     },
     setAuthorizerOption: function(app, opt_name, opt_value, cb){
         var url = baseUrl + 'api_set_authorizer_option?'
@@ -126,7 +126,7 @@ module.exports = {
                 if(err) return reject(err);
                 resolve(r);
             }.bind(this));
-        })
+        }.bind(this))
     },
     createURL: function(app, app_id, redirect_url, state, scope){
         var oauthUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize';
