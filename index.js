@@ -2,7 +2,6 @@ var request = require('node-weixin-request');
 var util = require('node-weixin-util');
 var settings = require('node-weixin-settings');
 var json2xml = require('json2xml');
-var xml2json = require('xml2json');
 
 require('es6-promise').polyfill();
 
