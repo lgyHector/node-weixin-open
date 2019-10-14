@@ -79,7 +79,7 @@ module.exports = {
             }.bind(this));
         }.bind(this))
     },
-    authorizerInfo: function(app, cb){
+    authorizerInfo: function(app, auth_appid, cb){
         var url = baseUrl + 'api_get_authorizer_info?'
         var params = {
             component_appid: app.app_id,
